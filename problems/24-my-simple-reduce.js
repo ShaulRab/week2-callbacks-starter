@@ -35,21 +35,38 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 *******************************************************************************/
 
 let mySimpleReduce = function(arr, cb) {
+
     // Defines the first value in array as starting value
     let cumma = arr[0];
+
     // Loops through remaining elements in array
     arr.forEach((ele, i) => {
+
+        // Skips the first element
         if (i === 0){
             return
         } else {
+
+            // accumalates the results by reassigning cumma each loop
             cumma = cb(cumma, ele);
         }
     });
+
+    // Returns the results
     return cumma;
 
 };
 
+/////////////////////////////////////////////////////////////////////////////////////
 
+/*
+To have a optional inital cumma...
 
+1. I would add logic to the initialisation of the "cumma" variable to check if a inital value was given.
+2. I would change the logic inside the beginning of the forEach() statement to check if a inital value was given
+    2b. don't skip the first element of the array if an alternate inital value was given
+ */
+
+/////////////////////////////////////////////////////////////////////////////////////
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = mySimpleReduce;
